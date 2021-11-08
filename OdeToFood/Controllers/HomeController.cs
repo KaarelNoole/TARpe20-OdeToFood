@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using OdeToFood.Models;
 using System;
@@ -26,6 +27,15 @@ namespace OdeToFood.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+        public IActionResult About()
+        {
+            var model = new AboutModel()
+            {
+                Name = "Kaarel Noole",
+                Location = "Tallin"
+            };
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
