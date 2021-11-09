@@ -19,9 +19,7 @@ namespace OdeToFood.Controllers
             _logger = logger;
         }
 
-        public HomeController()
-        {
-        }
+        
 
         public IActionResult Index()
         {
