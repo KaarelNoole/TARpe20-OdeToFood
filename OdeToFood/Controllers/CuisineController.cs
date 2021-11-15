@@ -8,10 +8,17 @@ namespace OdeToFood.Controllers
 {
     public class CuisineController : Controller
     {
+        [HttpPost]
         public IActionResult Search(string name = "french")
         {
 
-            return RedirectToAction("index", "Home",new { name = name});
+            return Content(name);
+        }
+        //[ActionName("otsi")]
+        [HttpGet]
+        public IActionResult Search()
+        {
+            return Content("Search!");
         }
     }
 }
