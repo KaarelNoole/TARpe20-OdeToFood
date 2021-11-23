@@ -90,7 +90,7 @@ namespace OdeToFood.Controllers
             }
         }
 
-        static List<RestaurantReview> _reviews = new List<RestaurantReview>
+        public static List<RestaurantReview> _reviews = new List<RestaurantReview>
         {
             new RestaurantReview
             {
