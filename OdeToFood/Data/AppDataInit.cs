@@ -12,12 +12,13 @@ namespace OdeToFood.Data
         {
             if (!context.Restaurants.Any())
             {
-
+                for (int i = 0; i <= 1000; i++)
+                {
                 context.Restaurants.Add(
                 new Restaurant
                 {
                     
-                    Name = "Cinnamon Club",
+                    Name = $"Cinnamon Club {i}",
                     City = "London",
                     Country = "UK",
                     Reviews = new List<RestaurantReview>()
@@ -33,7 +34,7 @@ namespace OdeToFood.Data
                 new Restaurant
                 {
                     
-                    Name = "Marrakesh",
+                    Name = $"{i}Marrakesh",
                     City = "D.C",
                     Country = "USA",
 
@@ -42,11 +43,12 @@ namespace OdeToFood.Data
                 new Restaurant
                 {
                     
-                    Name = "The House of Elliot",
+                    Name = $"The House of {i} Elliot",
                     City = "Ghent",
                     Country = "Belgium",
 
                 });
+                }
                 context.SaveChanges();     
                  }
             
