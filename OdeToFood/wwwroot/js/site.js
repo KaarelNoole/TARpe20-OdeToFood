@@ -27,8 +27,7 @@ $(function () {
     };
     const createAutocomplete = function () {
         const $input = $(this);
-        const option
-        s = {
+        const options = {
             source: $input.attr("data-otf-autocomplete"),
             select: submitAutocompleteForm
         };

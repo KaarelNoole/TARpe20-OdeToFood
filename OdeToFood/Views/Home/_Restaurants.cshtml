@@ -1,6 +1,6 @@
 ﻿@model IPagedList<RestaurantListViewModel>
     <div id="restaurantList">
-        <div class="pagedList" data-otf-targe="#restaurantList">
+        <div class="pagedList" data-otf-target="#restaurantList">
             @Html.PagedListPager(Model, page => Url.Action("Index", new 
         { page }),PagedListRenderOptions.MinimalWithItemCountText) 
         </div>
