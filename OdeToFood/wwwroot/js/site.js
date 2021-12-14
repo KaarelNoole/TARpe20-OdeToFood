@@ -27,12 +27,32 @@ $(function () {
     };
     const createAutocomplete = function () {
         const $input = $(this);
-        const options = {
+        const option
+        s = {
             source: $input.attr("data-otf-autocomplete"),
             select: submitAutocompleteForm
         };
         $input.autocomplete(options);
     };
+
+	const getPage = function () {
+		const $a = $(this);
+
+		const options = {
+			url: $a.attr("href"),
+			data: $("form").serialize(),
+			type: "get"
+		};
+
+		$.ajax(options).done(function (data) {
+			const target = $a.parents("div.pagedList").attr("data-otf-target");
+			$(target).replaceWith(data);
+		});
+		return false;
+	};
+
     $("form[data-otf-ajax='true']").submit(ajaxFormSubmit);
     $("input[data-otf-autocomplete]").each(createAutocomplete);
+
+	$("main").on("click", ".pagedList a", getPage);
 });
