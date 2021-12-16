@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{B21C2211-21FF-4B42-8115-4562194D894E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{B21C2211-21FF-4B42-8115-4562194D894E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood.Test", "OdeToFood.Test\OdeToFood.Test.csproj", "{CC311E10-694E-49A5-B86D-8E550BF949E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B21C2211-21FF-4B42-8115-4562194D894E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B21C2211-21FF-4B42-8115-4562194D894E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B21C2211-21FF-4B42-8115-4562194D894E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC311E10-694E-49A5-B86D-8E550BF949E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC311E10-694E-49A5-B86D-8E550BF949E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC311E10-694E-49A5-B86D-8E550BF949E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC311E10-694E-49A5-B86D-8E550BF949E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
