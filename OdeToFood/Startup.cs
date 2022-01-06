@@ -38,8 +38,11 @@ namespace OdeToFood
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddUnobtrusiveAjax();
 
-            services.AddDefaultIdentity<UserProfile>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<UserProfile,AppRole>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddDefaultUI()
+                .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             services.AddControllersWithViews();
         }
 
@@ -85,6 +88,8 @@ namespace OdeToFood
         private void SetupAppData(IApplicationBuilder app, IWebHostEnvironment env)
         {
             using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
+            using var userManager = serviceScope.ServiceProvider.GetService<UserManager<UserProfile>>();
+            using var roleManager = serviceScope.ServiceProvider.GetService<RoleManager<AppRole>>();
             using var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
             if (context==null)
             {
@@ -104,7 +109,10 @@ namespace OdeToFood
                     System.Threading.Thread.Sleep(1000);
                 }
             }
+            AppDataInit.SeedIdentity(userManager, roleManager);
             AppDataInit.SeedRestaurant(context);
+            
+
         }
     }
 }

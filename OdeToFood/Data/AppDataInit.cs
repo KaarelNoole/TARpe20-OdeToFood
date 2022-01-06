@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using OdeToFood.Models;
 
 namespace OdeToFood.Data
@@ -53,6 +54,23 @@ namespace OdeToFood.Data
                  }
             
             }
+
+        public static void SeedIdentity(UserManager<UserProfile> userManager, RoleManager<AppRole> roleManager)
+        {
+            var role = new AppRole();
+            role.Name = "Admin";
+            if (! roleManager.RoleExistsAsync("Admin").Result)
+            {
+                var result = roleManager.CreateAsync(role).Result;
+                if (!result.Succeeded)
+                {
+                    foreach (var IdentityError in result.Errors)
+                    {
+                        Console.WriteLine($"Can not create role! Error: { IdentityError.Description}");
+                    }
+                }
+            }
         }
+    }
     }
 
